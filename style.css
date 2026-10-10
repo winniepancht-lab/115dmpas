@@ -1,0 +1,28 @@
+:root{--bg:#0b1437;--panel:#121d4a;--ink:#eef3ff;--dim:#9fb0e0;--line:#2a3a7a;--hi:#7fe3c2}
+@media(prefers-color-scheme:light){:root{--bg:#f1f5ff;--panel:#fff;--ink:#0b1437;--dim:#4a5a90;--line:#c5d0f0;--hi:#0a7f63}}
+*{box-sizing:border-box}html{scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
+header{position:sticky;top:0;z-index:5;display:flex;gap:24px;align-items:baseline;padding:14px clamp(16px,4vw,48px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header b{font-size:18px;letter-spacing:.08em;margin-right:auto}
+header a{color:var(--dim);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+header a[aria-current]{color:var(--ink);border-color:var(--hi)}
+main{padding:clamp(16px,4vw,48px);max-width:1280px;margin:auto}
+h1{font-size:clamp(28px,5vw,48px);line-height:1.2;margin:0 0 8px}
+.sub{color:var(--dim);margin:0 0 32px}
+.vid{margin:0 0 48px}.vid h2{font-size:20px;margin:0 0 4px}.vid p{margin:0 0 12px;color:var(--dim)}
+.wrap{position:relative;background:#000;border-radius:6px;overflow:hidden}
+video{display:block;width:100%;max-height:78vh;background:#000}
+.bar{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+button,.btn{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:8px 18px;cursor:pointer;text-decoration:none}
+button:hover,.btn:hover{border-color:var(--hi)}
+:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,520px),1fr));gap:20px}
+.grid button{padding:0;border:0;background:none;text-align:left;display:block}
+.grid img{width:100%;height:auto;display:block;border-radius:4px;aspect-ratio:1200/149;background:var(--panel)}
+.grid span{display:block;font-size:13px;color:var(--dim);padding:4px 2px 0}
+dialog{border:0;padding:0;background:transparent;max-width:96vw;width:1200px;color:var(--ink)}
+dialog::backdrop{background:rgba(3,8,30,.88)}
+dialog img{width:100%;display:block;border-radius:6px}
+.cap{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:12px 0}
+.cap .sp{margin-right:auto}
+.spd{display:flex;gap:6px;flex-wrap:wrap}.spd button{padding:8px 12px}button[aria-pressed=true]{background:var(--hi);color:var(--bg);border-color:var(--hi)}

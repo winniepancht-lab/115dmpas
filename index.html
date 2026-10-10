@@ -1,0 +1,26 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>影片 · 國慶投影畫作</title><link rel="stylesheet" href="style.css"></head><body>
+<header><b>國慶投影畫作</b><a href="index.html" aria-current="page">影片</a><a href="gallery.html">畫作集</a></header>
+<main>
+<h1>兩支影片</h1><p class="sub">可各自播放、暫停，也可以一鍵全部暫停。</p>
+<section class="vid"><h2>影片一：建築投影畫作</h2><p>畫作一幅接一幅投影在建築立面上。</p>
+<div class="wrap"><video id="v1" src="videos/video1.mp4" controls preload="metadata" playsinline></video></div>
+<div class="bar"><button data-t="v1">播放</button><button data-s="v1" data-d="-1">上一格</button><button data-s="v1" data-d="1">下一格</button><span class="spd" data-v="v1"></span></div></section>
+<section class="vid"><h2>影片二：彩繪工作坊名單</h2><p>臺北市立東門國小彩繪工作坊的參與名單。</p>
+<div class="wrap"><video id="v2" src="videos/video2.mp4" controls preload="metadata" playsinline></video></div>
+<div class="bar"><button data-t="v2">播放</button><button data-s="v2" data-d="-1">上一格</button><button data-s="v2" data-d="1">下一格</button><span class="spd" data-v="v2"></span></div></section>
+<button id="stop">全部暫停</button>
+</main>
+<script>
+const vs=[...document.querySelectorAll('video')];
+document.querySelectorAll('[data-t]').forEach(b=>{const v=document.getElementById(b.dataset.t);
+b.onclick=()=>v.paused?v.play():v.pause();
+v.onplay=v.onpause=v.onended=()=>b.textContent=v.paused?'播放':'暫停'});
+document.getElementById('stop').onclick=()=>vs.forEach(v=>v.pause());
+document.querySelectorAll('.spd').forEach(s=>{const v=document.getElementById(s.dataset.v);
+[.25,.5,1,1.5,2,3,4,6,8].forEach(r=>{const b=document.createElement('button');b.textContent=r+'x';b.setAttribute('aria-pressed',r==1);
+b.onclick=()=>{v.playbackRate=r;s.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x==b))};s.append(b)})});
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{const v=document.getElementById(b.dataset.s);v.pause();v.currentTime=Math.max(0,v.currentTime+b.dataset.d/60)});
+vs.forEach(v=>v.defaultPlaybackRate=1);
+const t=+new URLSearchParams(location.search).get('t');
+if(t){const v=vs[0];v.addEventListener('loadedmetadata',()=>{v.currentTime=t},{once:true});if(v.readyState>0)v.currentTime=t;v.scrollIntoView()}
+</script></body></html>
