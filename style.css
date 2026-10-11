@@ -6,7 +6,7 @@
 html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
 body{margin:0;min-height:100vh;color:var(--ink);background:var(--bg0);font:16px/1.75 "Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
 padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
-body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+body::before{content:"";position:fixed;inset:0;z-index:-1;will-change:transform;background:
 radial-gradient(900px 500px at 8% -5%,rgba(120,200,255,.38),transparent 60%),
 radial-gradient(800px 520px at 96% 4%,rgba(255,190,215,.32),transparent 60%),
 radial-gradient(900px 600px at 50% 106%,rgba(160,235,210,.38),transparent 60%),
@@ -25,7 +25,7 @@ background:rgba(255,255,255,.78);backdrop-filter:blur(14px);-webkit-backdrop-fil
 main{max-width:1320px;margin:0 auto;padding:0 var(--pad) 40px}
 .hero{padding:clamp(28px,7vw,76px) 0 clamp(16px,3vw,28px);position:relative}
 .hero h1{margin:0 0 12px;font-size:clamp(28px,6.4vw,58px);line-height:1.18;letter-spacing:.02em;
-background:var(--gradtxt);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 9s ease-in-out infinite alternate}
+background:var(--gradtxt);-webkit-background-clip:text;background-clip:text;color:transparent;}
 @keyframes shine{to{background-position:100% 0}}
 .hero .lead{margin:0;color:var(--dim);font-size:clamp(15px,2.6vw,19px);max-width:46em}
 .hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
@@ -34,7 +34,7 @@ background:var(--gradtxt);-webkit-background-clip:text;background-clip:text;colo
 .btn:hover,button:hover{border-color:var(--c1);box-shadow:0 0 0 3px rgba(23,152,232,.15)}
 .btn.pri{color:#0d2a4d;background:var(--grad);border-color:transparent;font-weight:700;box-shadow:0 4px 16px rgba(80,170,220,.28)}
 :focus-visible{outline:3px solid #f0a020;outline-offset:2px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(14px,3vw,26px);box-shadow:var(--shadow);backdrop-filter:blur(6px)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(14px,3vw,26px);box-shadow:var(--shadow)}
 .note{margin:6px 0 34px}
 .note h2,.vid h2{margin:0 0 8px;font-size:clamp(19px,3.4vw,25px)}
 .note ul{margin:0;padding-left:1.3em;color:var(--dim)}.note li{margin:4px 0}.note b{color:var(--ink)}
@@ -74,3 +74,6 @@ footer{max-width:1320px;margin:0 auto;padding:10px var(--pad) calc(34px + env(sa
 .tip{display:flex;gap:10px;align-items:flex-start;padding:12px 16px;border-radius:14px;background:rgba(255,236,170,.5);border:1px solid rgba(240,180,58,.5);color:#5a3a00;margin:0 0 16px;font-size:14.5px;line-height:1.7}
 .tip p{margin:0 0 6px}.tip p:last-child{margin:0}.tip b{color:#3d2700}
 @media(max-height:540px){dialog img{max-height:56vh}}
+.item{content-visibility:auto;contain-intrinsic-size:auto 60px}.a4 .item{contain-intrinsic-size:auto 220px}
+.credit{margin:10px 4px 0;font-size:13px;color:var(--dim)}
+.tip a{color:#8a4b00;font-weight:700}
