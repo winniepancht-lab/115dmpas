@@ -10,13 +10,13 @@
 <div class="wrap"><video id="v1" src="videos/video1.mp4" controls preload="metadata" playsinline></video></div>
 <div class="bar"><button data-t="v1">播放</button><button data-s="v1" data-d="-1" aria-label="倒退一格">◀ 一格</button><button data-s="v1" data-d="1" aria-label="前進一格">一格 ▶</button></div>
 <div class="bar"><span class="lbl">播放速度</span><div class="spd" data-v="v1"></div></div></section>
-<section class="vid card" id="v2c"><h2>影片2：展演結尾感謝名單</h2>
+<section class="vid card" id="v2c"><h2>影片2：最後的結尾畫面與參與名單</h2>
 <div class="meta"><span class="tag">完整影片的結尾與名單</span><span class="tag hot">原片 0.25 倍速・現場約 4 倍</span></div>
-<p style="margin:0 0 12px;color:var(--dim)">展演最後的結尾畫面與參與名單。</p>
+<p style="margin:0 0 12px;color:var(--dim)">展演結尾感謝名單。</p>
 <div class="wrap"><video id="v2" src="videos/video2.mp4" controls preload="metadata" playsinline></video></div>
 <div class="bar"><button data-t="v2">播放</button><button data-s="v2" data-d="-1" aria-label="倒退一格">◀ 一格</button><button data-s="v2" data-d="1" aria-label="前進一格">一格 ▶</button></div>
 <div class="bar"><span class="lbl">播放速度</span><div class="spd" data-v="v2"></div></div></section>
-<button id="stop">全部暫停</button></main><footer><div class="card disc"><b>免責聲明</b>本網站內容以 AI 輔助截取畫面並模擬製作，由東門國小家長 Winnie Pan自行分享，無商業及販售用途。投影畫面未標註小朋友資訊，恕無法提供相關個資；僅供學生家長及小朋友自行尋找自己的作品，留存紀念。</div></footer><button id="top" aria-label="回到頂端">↑</button><script>const tb=document.getElementById("top");addEventListener("scroll",()=>tb.classList.toggle("on",scrollY>600),{passive:true});tb.onclick=()=>scrollTo({top:0})</script>
+<button id="stop">全部暫停</button></main><footer><div class="card disc"><b>免責聲明</b>本網站內容以 AI 輔助截取畫面並模擬製作，由東門國小家長 Winnie Pan 自行分享，無商業及販售用途。投影畫面未標註小朋友資訊，恕無法提供相關個資；僅供學生家長及小朋友自行尋找自己的作品，留存紀念。</div></footer><button id="top" aria-label="回到頂端">↑</button><script>const tb=document.getElementById("top");addEventListener("scroll",()=>tb.classList.toggle("on",scrollY>600),{passive:true});tb.onclick=()=>scrollTo({top:0})</script>
 <script>
 const vs=[...document.querySelectorAll('video')];
 document.querySelectorAll('[data-t]').forEach(b=>{const v=document.getElementById(b.dataset.t);
